@@ -15,7 +15,8 @@ public class SocketServer {
 			//listening on port 1337 & backlog of 10
 			theSocket = new ServerSocket(1337, 10);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			//If there's some sort of IOException, let us know!
+			System.out.println(e.toString());
 			e.printStackTrace();
 		}
 	}
