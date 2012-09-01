@@ -37,11 +37,13 @@ public class Main {
 			cs = in.nextLine();
 			
 			if(cs.equalsIgnoreCase("c")) {
-				out.println("Connect to: ");
+				out.print("Connect to: ");
 				address = in.nextLine();
-				out.println("Client connecting to " + address);
+				//The client should output something in the form of:
+				//out.println("Client connecting to " + address);
 			} else if(cs.equalsIgnoreCase("s")) {
-				out.println("Server waiting for connections...");
+				//The server should output something in the form of:
+				//out.println("Server waiting for connections...");
 			} else {
 				out.println("Please enter either 'c' or 's'");
 			}
