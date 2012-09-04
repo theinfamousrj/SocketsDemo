@@ -32,7 +32,7 @@ public class SocketClient {
 	}
 	
 	public void sendMessage(String msg) {
-		
+		//Send the message.
 	}
 	
 }
