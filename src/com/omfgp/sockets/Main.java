@@ -17,8 +17,8 @@ public class Main {
 		UserChat chat = new UserChat();
 		
 		//Ready some variables for our client and server
-		SocketServer server;
-		SocketClient client;
+		SocketServer server = new SocketServer();
+		SocketClient client = new SocketClient();
 		
 		//Store our useful input and output
 		String name, address, msg;
@@ -27,23 +27,28 @@ public class Main {
 		//Dialog with the user
 		out.println("Please enter the following information...");
 		
-		out.print("username: ");
-		name = in.nextLine();
-		chat.setUserName(name);
-		
 		//Let's make sure we don't get any goofy input
 		while(!cs.equalsIgnoreCase("c") && !cs.equalsIgnoreCase("s")) {
 			out.print("client or server [c/s]: ");
 			cs = in.nextLine();
 			
 			if(cs.equalsIgnoreCase("c")) {
+				out.print("username: ");
+				name = in.nextLine();
+				chat.setUserName(name);
+				
 				out.print("Connect to: ");
 				address = in.nextLine();
+				
 				//The client should output something in the form of:
 				//out.println("Client connecting to " + address);
+				client.setAddress(address);
+				client.Start();
+				
 			} else if(cs.equalsIgnoreCase("s")) {
 				//The server should output something in the form of:
 				//out.println("Server waiting for connections...");
+				server.Start();
 			} else {
 				out.println("Please enter either 'c' or 's'");
 			}
